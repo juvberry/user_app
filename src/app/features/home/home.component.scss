@@ -1,0 +1,32 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/to-rem.scss';
+
+
+.title-container{
+    background: linear-gradient(
+        $primary-color 0%,
+        $primary-color 40%,
+        $secondary-color 40%,
+        $secondary-color 100%
+    );
+
+    width: 100%;
+    height: 100vh;
+
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    h2{
+        color: $white;
+        font-weight: 100;
+        letter-spacing: toRem(2);
+
+        padding: toRem(80);
+        font-size: toRem(30);
+        height: toRem(81);
+        margin: 0;
+    }
+}

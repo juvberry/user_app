@@ -1,0 +1,25 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/to-rem.scss';
+
+mat-card{
+    width: 80%;
+    height: toRem(300);
+
+    position: absolute;
+    top: toRem(140);
+    left: toRem(100);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .card-bckground-img{
+        height: 200px;
+        width: 100%;
+        .mat-card-image{
+            height: inherit;
+            width: inherit;
+        }
+    }
+}

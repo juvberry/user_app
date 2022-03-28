@@ -1,20 +1,26 @@
-@import '../../../styles/variables.scss';
-@import '../../../styles/to-rem.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/to-rem.scss';
 
 
 .header-container{
     background-color: $primary-color;
     height: toRem(50);
-    position: fixed;
-
+    width: 100%;
     -webkit-box-shadow: 0px 4px 7px 0px #5909a3; 
     box-shadow: 0px 4px 7px 0px #5909a3;
 
     padding: 0;
-    span{
+
+    .header-row{
+        width: 100%;
+    }
+
+    .header-text{
         color: $white;
+        background-color: inherit;
+        text-align: center;
         font-weight: 100;
         font-size: toRem(17);
-        padding: 0 0 0 toRem(100);
+        padding: 0 0 toRem(10) toRem(100);
     }
 }

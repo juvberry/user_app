@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Módulos
 import { CoreModule } from './core/core.module';
-import { HeaderModule } from './shared/header/header.module';
+import { HeaderModule } from './header/header.module';
 import { HomeModule } from './features/home/home.module';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HomeModule } from './features/home/home.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
     HeaderModule,

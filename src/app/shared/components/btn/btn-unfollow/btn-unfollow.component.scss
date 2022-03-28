@@ -1,0 +1,17 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/to-rem.scss';
+
+.btn-unfollow{
+    background-color: $warning;
+    color: $white;
+    border-radius: 0;
+
+    height: toRem(26);
+    width: toRem(24);
+    margin-right: toRem(4);
+    padding: 0;
+    line-height: 0;
+
+    font-size: toRem(12);
+    font-weight: lighter;
+}

@@ -1,0 +1,36 @@
+<div class="cards-info-container">
+    <mat-card class="info-container">
+                <mat-card-title class="card-title">
+                    Personal Info
+                </mat-card-title>
+                <mat-card-content class="card-content">
+                    <ul class="list-unstyled">
+                        <li>
+                            born at: Alemanha
+                        </li>
+                        <li>
+                            age: 29 years old   
+                        </li>
+                    </ul>
+                </mat-card-content>
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false"
+                                         class="expansion-panel">
+                      <mat-expansion-panel-header class="see-more">
+                        <mat-panel-title class="see-more-span">
+                          see more
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <ul class="list-container">
+                          <li>
+                              info: 1
+                          </li>
+                          <li>
+                            info: 2
+                            </li>
+                      </ul>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+    </mat-card>
+</div>

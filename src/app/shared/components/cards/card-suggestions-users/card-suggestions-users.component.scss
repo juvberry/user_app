@@ -1,0 +1,24 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/to-rem.scss';
+
+.img-style{
+    max-height: toRem(46);
+}
+
+.style-name{
+    font-size: toRem(17);
+    margin-bottom: 0;
+}
+
+.style-address{
+    font-size: toRem(10);
+    margin-bottom: toRem(6);
+}
+
+.style-description{
+    font-size: toRem(10);
+    color: rgba(0,0,0,.54);
+    text-align: center;
+    line-height: toRem(15);
+}
+

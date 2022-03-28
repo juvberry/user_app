@@ -41,3 +41,23 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+// to remove padding from inside the expansion panel
+div.mat-expansion-panel-body {
+	padding: 0 2px;
+}
+
+.expansion-container.btn-following{
+	& .mat-expansion-indicator::after{
+		color: #fff;
+	}
+	.mat-expansion-panel-header.mat-focus-indicator.mat-expansion-toggle-indicator-after.mat-expanded{
+		& span.mat-expansion-indicator::after{
+			color: #9022F3;
+		}
+	}
+}
+
+
+
+@import '~bootstrap/scss/bootstrap';

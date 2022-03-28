@@ -1,25 +1,83 @@
 @import '../../../../../styles/variables.scss';
 @import '../../../../../styles/to-rem.scss';
 
-mat-card{
-    width: 80%;
-    height: toRem(300);
+*{
+    text-align: center;
+    letter-spacing: toRem(2);
+}
 
-    position: absolute;
-    top: toRem(140);
-    left: toRem(100);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.card-main-info-container{
+    & mat-card{
+        border: 1px solid #ececec;
+    }
+   
 
     .card-bckground-img{
-        height: 200px;
+        height: toRem(120);
         width: 100%;
-        .mat-card-image{
+
+        .img-bck{
             height: inherit;
-            width: inherit;
+            object-fit: cover;
+            filter: blur(3px);
+            margin-top: 0;
+        }
+    }
+
+    .img-container{
+        position: relative;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: center;
+
+        .img-avatar{
+            position: absolute;
+            top: toRem(-104);
+            border-radius: 50%;
+        }
+    }
+
+    .info-card-container{
+        width: 100%;
+        
+
+        .info-container{
+            flex-direction: column;
+            align-content: center;
+            margin-top: toRem(49);
+
+            .name-container{
+                padding-top: toRem(16);
+            }
+    
+            .address-container{
+                padding-top: toRem(8);
+            }
+    
+            .btn-container{
+                padding-top: toRem(8);
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .btn-two{
+                color: $primary-color;
+            }
+
+            .btn-two:hover{
+                border: toRem(2) solid $primary-color;
+                cursor: pointer;
+            }
+
+            .btn-follow{
+                width: 44vw;
+                align-items: flex-end;
+                display: flex;
+                justify-content: flex-end;
+            }
         }
     }
 }

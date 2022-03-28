@@ -1,0 +1,41 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/to-rem.scss';
+
+
+.info-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    border: 1px solid #ECECEC;
+
+    .card-title{
+        font-size: toRem(16);
+        padding: 0 toRem(2);
+    }
+
+    .card-content{
+        padding: 0 toRem(2);
+    }
+
+    .expansion-panel{
+        box-shadow: none;
+        padding: 0 toRem(2);
+        border-top: 1px solid #ECECEC;
+    }
+
+    .list-container{
+        padding: 0;
+    }
+
+    .see-more{
+        height: toRem(40);
+        padding: 0 toRem(2);
+    }
+
+    .see-more-span{
+        font-size: toRem(14);
+        color: $primary-color;
+        opacity: 2;
+    }
+}

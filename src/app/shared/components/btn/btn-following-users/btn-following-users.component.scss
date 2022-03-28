@@ -1,0 +1,65 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/to-rem.scss';
+
+.expansion-container{
+    background-color: $primary-color;
+    box-shadow: none;
+
+    margin-top: toRem(5);
+
+    & .header-container-following{
+        height: toRem(42);
+    }
+
+    & .expansion-title{
+        color: $white;
+        padding-top: toRem(4);
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    & span.mat-expansion-indicator{
+        color: $white;
+        padding-top: toRem(10);
+    }
+}
+
+.mat-expansion-panel.expansion-container.btn-following.mat-expanded.mat-expansion-panel-spacing{
+    background-color: #fff;
+    margin-top: toRem(5);
+}
+
+#following-list{
+    padding-left: toRem(10);
+}
+
+.mat-expansion-panel-header.mat-focus-indicator.mat-expansion-toggle-indicator-after.mat-expanded{
+    & .mat-expansion-panel-header-title.expansion-title{
+        color: $primary-color;
+        padding: 0;
+    }
+}
+
+.list-item{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    & .user-container{
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        
+        & .user-img-list{
+            max-height: toRem(38);
+        }
+
+        & .user-name-list{
+            font-size: toRem(16);
+            margin-left: toRem(6);
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+@import '../styles/to-rem.scss';
+
+.page-background-container{
+    background: linear-gradient(
+        $primary-color 0%,
+        $primary-color 40%,
+        $secondary-color 40%,
+        $secondary-color 100%
+    );
+
+    width: 100%;
+}

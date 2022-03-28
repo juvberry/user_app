@@ -1,1 +1,59 @@
-<p>btn-following-users works!</p>
+<div>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false"
+                             class="expansion-container btn-following">
+          <mat-expansion-panel-header class="header-container-following">
+            <mat-panel-title class="expansion-title">
+              following
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul id="following-list">
+              <li class="list-item">
+                  <div class="user-container">
+                    <div class="img-circle">
+                        <img class="user-img-list" src="../../../../../assets/img/woman-img.jpeg" alt="user picture">
+                    </div>
+                    <p class="user-name-list">
+                        Julia Beims
+                    </p>
+                  </div>
+                  <app-btn-unfollow></app-btn-unfollow>
+              </li>
+              <li class="list-item">
+                <div class="user-container">
+                  <div class="img-circle">
+                      <img class="user-img-list" src="../../../../../assets/img/woman-img.jpeg" alt="user picture">
+                  </div>
+                  <p class="user-name-list">
+                      Ricardo Salim
+                  </p>
+                </div>
+                <app-btn-unfollow></app-btn-unfollow>
+              </li>
+              <li class="list-item">
+                <div class="user-container">
+                  <div class="img-circle">
+                      <img class="user-img-list" src="../../../../../assets/img/woman-img.jpeg" alt="user picture">
+                  </div>
+                  <p class="user-name-list">
+                      Maressa Busch
+                  </p>
+                </div>
+                <app-btn-unfollow></app-btn-unfollow>
+              </li>
+              <li class="list-item">
+                <div class="user-container">
+                  <div class="img-circle">
+                      <img class="user-img-list" src="../../../../../assets/img/woman-img.jpeg" alt="user picture">
+                  </div>
+                  <p class="user-name-list">
+                      Dannieli Knuppe
+                  </p>
+                </div>
+                <app-btn-unfollow></app-btn-unfollow>
+              </li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+</div>

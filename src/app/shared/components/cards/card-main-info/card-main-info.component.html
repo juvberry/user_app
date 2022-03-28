@@ -1,20 +1,40 @@
-<mat-card>
-    <div class="card-bckground-img">
-        <img src="../../../../../assets/img/woman-img.jpeg" mat-card-image>
-    </div>
-    <div class="info-header-container">
-        <mat-card-header>
-            <img src="../../../../../assets/img/woman-img.jpeg" mat-card-avatar>
-            <div class="name-container">
-                <mat-card-title>
-                    Julia Beims
-                </mat-card-title>
+<div class="card-main-info-container">
+    <mat-card>
+        <div class="row">
+            <div class="col">
+                <div class="card-bckground-img">
+                    <img src="../../../../../assets/img/woman-img.jpeg" class="img-bck" mat-card-image>
+                </div>
             </div>
-            <div class="address-container">
-                <mat-card-subtitle>
-                    Curitiba, Brasil
-                </mat-card-subtitle>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="img-container">
+                    <img src="../../../../../assets/img/woman-img.jpeg" class="img-avatar" mat-card-lg-image>
+                </div>
             </div>
-        </mat-card-header>
-    </div>
-</mat-card>
+        </div>
+        <div class="row g-0 info-card-container">
+            <mat-card-title-group class="col info-container">
+                <div class="btn-container">
+                    <div class="btn-follow">
+                        <app-btn-follow></app-btn-follow>
+                    </div>
+                    <div id="btn-next-one">
+                        <button mat-raised-button class="btn-two">Try next one</button>
+                    </div>
+                </div>
+                <div class="name-container">
+                    <mat-card-title>
+                        Julia Beims
+                    </mat-card-title>
+                </div>
+                <div class="address-container">
+                    <mat-card-subtitle>
+                        Curitiba, Brasil
+                    </mat-card-subtitle>
+                </div>
+            </mat-card-title-group>
+        </div>
+    </mat-card>
+</div>

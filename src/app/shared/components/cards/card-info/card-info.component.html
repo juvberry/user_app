@@ -1,36 +1,61 @@
 <div class="cards-info-container">
     <mat-card class="info-container">
-                <mat-card-title class="card-title">
-                    Personal Info
-                </mat-card-title>
-                <mat-card-content class="card-content">
-                    <ul class="list-unstyled">
+            <mat-card-title class="card-title" [ngSwitch]="typeCard">
+                <span *ngSwitchCase="'personal'">
+                    Personal info
+                </span>
+                <span *ngSwitchCase="'contact'">
+                    Contact info
+                </span>
+            </mat-card-title>
+            <mat-card-content class="card-content">
+                <ul class="list-unstyled" [ngSwitch]="typeCard">
+                    <div *ngSwitchCase="'personal'">
                         <li>
-                            born at: Alemanha
+                            Born at: {{mainUser?.location?.country}}
                         </li>
                         <li>
-                            age: 29 years old   
+                            Age: {{mainUser?.dob?.age}} years old   
                         </li>
-                    </ul>
-                </mat-card-content>
-                <mat-accordion>
-                    <mat-expansion-panel (opened)="panelOpenState = true"
-                                         (closed)="panelOpenState = false"
-                                         class="expansion-panel">
-                      <mat-expansion-panel-header class="see-more">
+                    </div>
+                    <div *ngSwitchCase="'contact'">
+                        <li>
+                            Email: {{mainUser?.email}}
+                        </li>
+                        <li>
+                            Phone: {{mainUser?.cell}}  
+                        </li>
+                    </div>
+                </ul>
+            </mat-card-content>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false"
+                                        class="expansion-panel">
+                    <mat-expansion-panel-header class="see-more">
                         <mat-panel-title class="see-more-span">
-                          see more
+                            see more
                         </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <ul class="list-container">
-                          <li>
-                              info: 1
-                          </li>
-                          <li>
-                            info: 2
+                    </mat-expansion-panel-header>
+                    <ul class="list-container" [ngSwitch]="typeCard">
+                        <div *ngSwitchCase="'personal'">
+                            <li>
+                                Title + full name: {{mainUser?.name?.title}} {{mainUser?.name?.first}} {{mainUser?.name?.last}}
                             </li>
-                      </ul>
-                    </mat-expansion-panel>
-                  </mat-accordion>
+                            <li>
+                                Registered at age: {{mainUser?.registered?.age}}  
+                            </li>
+                        </div>
+                        <div *ngSwitchCase="'contact'">
+                            <li>
+                                Full address: {{mainUser?.location?.street?.name}}, {{mainUser?.location?.street?.number}}, {{mainUser?.location?.city}}, {{mainUser?.location?.state}}, {{mainUser?.location?.country}}
+                            </li>
+                            <li>
+                                Postcode: {{mainUser?.location?.postcode}}  
+                            </li>
+                        </div>
+                    </ul>
+                </mat-expansion-panel>
+            </mat-accordion>
     </mat-card>
 </div>

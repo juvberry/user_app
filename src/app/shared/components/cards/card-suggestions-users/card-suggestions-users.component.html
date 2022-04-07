@@ -1,20 +1,20 @@
-<div class="suggestion-card-container">
-    <mat-card>
+<div>
+    <mat-card class="suggestion-card-container">
         <div class="row">
-            <div class="col d-flex justify-content-center">
-                <img class="img-style" src="../../../../../assets/img/woman-img.jpeg" alt="user avatar">
+            <div class="col-sm d-flex justify-content-center">
+                <img class="img-style" [src]="user?.picture?.medium" alt="user avatar">
             </div>
         </div>
         <div class="row">
-            <div class="col d-flex flex-column align-items-center">
+            <div class="col-sm d-flex flex-column align-items-center">
                 <div class="name-container">
                     <mat-card-title class="mt-2 style-name">
-                        Julia Beims
+                        {{user?.name?.first}} {{user?.name?.last}}
                     </mat-card-title>
                 </div>
                 <div class="address-container">
                     <mat-card-subtitle class="style-address">
-                        Curitiba, Brasil
+                        {{user?.location?.country}}, {{user?.location?.city}} 
                     </mat-card-subtitle>
                 </div>
                 <div class="description-container">
@@ -23,7 +23,7 @@
                     </mat-card-content>
                 </div>
                 <div>
-                    <app-btn-follow [small]="true"></app-btn-follow>
+                    <app-btn-follow [small]="true" (click)="btnFollow()"></app-btn-follow>
                 </div>
             </div>
         </div>

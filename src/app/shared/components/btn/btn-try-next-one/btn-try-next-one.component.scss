@@ -1,0 +1,22 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/to-rem.scss';
+
+.btn-next-one{
+    color: $primary-color;
+    text-align: center;
+    letter-spacing: toRem(2);
+
+    @media (max-width:425px){
+        letter-spacing: toRem(1.4);
+        border: none;
+    }
+}
+
+.btn-next-one:hover{
+    border: toRem(2) solid $primary-color;
+    cursor: pointer;
+
+    @media (max-width:425px){
+        border: none;
+    }
+}

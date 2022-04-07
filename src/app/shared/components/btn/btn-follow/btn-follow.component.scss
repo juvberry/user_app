@@ -4,7 +4,6 @@
 .btn-one{
     border: toRem(2) solid $primary-color;
     color: $primary-color;
-
     width: toRem(110);
 }
 
@@ -13,6 +12,12 @@
     border: toRem(2) solid transparent;
     color: $white;
     cursor: pointer;
+
+    @media (max-width:425px){
+        background-color: $white;
+        border: toRem(1) solid $primary-color;
+        color: $primary-color;
+    }
 }
 
 .btn-follow-sm{

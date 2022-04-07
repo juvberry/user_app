@@ -6,15 +6,15 @@
     </div>
     <div class="row">
         <div class="col">
-            <app-card-main-info></app-card-main-info>
+            <app-card-main-info [mainUser]="mainUser" (nextUser)="updateUsersArray($event)" (follow)="homeSetStorage($event)" (unfollow)="unfollowUser($event)"></app-card-main-info>
         </div>
     </div>
-    <div class="row gx-1 cards-info">
-        <div class="col">
-            <app-card-info></app-card-info>
+    <div class="row row-col-sm gx-1 cards-info">
+        <div class="col-12 pb-1 col-md-6">
+            <app-card-info [typeCard]="'personal'" [mainUser]="mainUser"></app-card-info>
         </div>
-        <div class="col">
-            <app-card-info></app-card-info>
+        <div class="col-12 col-md-6">
+            <app-card-info [typeCard]="'contact'" [mainUser]="mainUser"></app-card-info>
         </div>
     </div>
     <div class="row gx-2 pb-3">
@@ -23,17 +23,20 @@
                 Suggestions 4 you
             </h2>
         </div>
-        <div class="col">
-            <app-card-suggestions-users></app-card-suggestions-users>
-        </div>
-        <div class="col">
-            <app-card-suggestions-users></app-card-suggestions-users>
-        </div>
-        <div class="col">
-            <app-card-suggestions-users></app-card-suggestions-users>
-        </div>
-        <div class="col">
-            <app-card-suggestions-users></app-card-suggestions-users>
-        </div>
+        <ng-container *ngIf="!smallScreen">
+            <div class="col" *ngFor="let user of users">
+                <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="smallScreen">
+            <swiper [config]="config">
+                <div class="swiper-wrapper">
+                    <div class="col swiper-slide" *ngFor="let user of users">
+                        <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </swiper>
+        </ng-container>
     </div>
 </div>

@@ -5,10 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// Swiper
+
 // Módulos
 import { CoreModule } from './core/core.module';
 import { HeaderModule } from './header/header.module';
 import { HomeModule } from './features/home/home.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,12 @@ import { HomeModule } from './features/home/home.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     CoreModule,
     HeaderModule,
-    HomeModule
+    HomeModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

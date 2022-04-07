@@ -13,6 +13,10 @@
 
     .header-row{
         width: 100%;
+
+        @media (max-width: 425px) {
+            width: -webkit-fill-available;
+        }
     }
 
     .header-text{
@@ -22,5 +26,9 @@
         font-weight: 100;
         font-size: toRem(17);
         padding: 0 0 toRem(10) toRem(100);
+
+        @media (max-width: 425px) {
+            padding: 0;
+        }
     }
 }

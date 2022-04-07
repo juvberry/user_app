@@ -1,18 +1,29 @@
 @import '../../../../../styles/variables.scss';
 @import '../../../../../styles/to-rem.scss';
 
+*{
+    text-align: center;
+}
 .img-style{
     max-height: toRem(46);
+    border-radius: 50%;
 }
 
 .style-name{
-    font-size: toRem(17);
+    font-size: toRem(16);
     margin-bottom: 0;
+
+    @media (max-width: 425px) {
+        margin-bottom: toRem(6);
+    }
 }
 
 .style-address{
     font-size: toRem(10);
     margin-bottom: toRem(6);
+    @media (max-width: 425px) {
+        margin-bottom: toRem(3);
+    }
 }
 
 .style-description{
@@ -20,5 +31,19 @@
     color: rgba(0,0,0,.54);
     text-align: center;
     line-height: toRem(15);
+
+    @media (max-width: 425px) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: toRem(272);
+    }
 }
 
+.suggestion-card-container{
+    height: toRem(265);
+
+    @media (max-width: 425px) {
+        max-height: toRem(200);
+    }
+}

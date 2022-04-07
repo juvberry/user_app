@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
+import { UserListService } from 'src/app/services/user-list.service';
+
 
 @Component({
   selector: 'app-btn-following-users',
@@ -7,11 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BtnFollowingUsersComponent implements OnInit {
 
+  @Input() users:any;
+  @Output() following:any = new Subject()
+  @Output() unfollow:any = new Subject()
+
   panelOpenState = false
   
-  constructor() { }
+  constructor(private userListService:UserListService) { }
 
   ngOnInit(): void {
+    this.showFollowing()
+  }
+
+  showFollowing(){
+    this.users = this.userListService.getStorage()
+  }
+
+  btnUnfollow(user:any){
+    this.unfollow.next(user)
   }
 
 }

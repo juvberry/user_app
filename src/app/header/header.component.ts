@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// service
+import { UserListService } from '../services/user-list.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  users:any
+  oneUser:any
+  
+  constructor(private userListService:UserListService) { }
 
   ngOnInit(): void {
   }
-
+  
+  unfollowUser(e:any){
+    this.oneUser = this.userListService.removeUser(e)
+  }
+  
 }

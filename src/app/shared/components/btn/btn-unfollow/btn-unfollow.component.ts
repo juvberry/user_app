@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-btn-unfollow',
@@ -9,6 +9,8 @@ export class BtnUnfollowComponent implements OnInit {
 
   constructor() { }
 
+  @Input() large = false;
+  
   ngOnInit(): void {
   }
 

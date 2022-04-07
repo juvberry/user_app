@@ -16,6 +16,10 @@
         height: toRem(120);
         width: 100%;
 
+        @media (max-width:425px) {
+            height: toRem(100);
+        }
+
         .img-bck{
             height: inherit;
             object-fit: cover;
@@ -35,41 +39,79 @@
             position: absolute;
             top: toRem(-104);
             border-radius: 50%;
+
+            @media (max-width:425px) {
+                width: toRem(132);
+                height: toRem(132);
+            }
         }
     }
 
     .info-card-container{
         width: 100%;
-        
 
         .info-container{
             flex-direction: column;
             align-content: center;
             margin-top: toRem(49);
 
+            @media (max-width:425px) {
+                margin-top: toRem(24);
+            }
+
             .name-container{
                 padding-top: toRem(16);
+
+                @media (max-width:425px) {
+                    padding-top: toRem(10);
+                }
+
+                .name-title-style{
+                    @media (max-width:425px) {
+                        font-size: toRem(16);
+                        margin-bottom: 0;
+                    }
+                }
             }
     
             .address-container{
                 padding-top: toRem(8);
+                @media (max-width:425px) {
+                    padding-top: toRem(3);
+                }
+
+                .address-title-style{
+                    @media (max-width:425px) {
+                        font-size: toRem(10);
+                        margin-bottom: 0;
+                        letter-spacing: toRem(1.4);
+                        font-weight: 500;
+                    }
+                }
             }
     
             .btn-container{
                 padding-top: toRem(8);
-
                 display: flex;
-                justify-content: space-between;
                 align-items: center;
+                justify-content: flex-end;
+
+                @media (max-width:425px) {
+                    justify-content: center;
+                }
+
+                &.from-api{
+                    justify-content: space-between;
+
+                    @media (max-width:425px) {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                }
             }
             
-            .btn-two{
-                color: $primary-color;
-            }
-
-            .btn-two:hover{
-                border: toRem(2) solid $primary-color;
-                cursor: pointer;
+            .btn-next{
+                width: 44vw;
             }
 
             .btn-follow{
@@ -77,6 +119,11 @@
                 align-items: flex-end;
                 display: flex;
                 justify-content: flex-end;
+
+                @media (max-width:425px) {
+                    justify-content: center;
+                    padding: toRem(2) 0 toRem(6) 0;
+                }
             }
         }
     }

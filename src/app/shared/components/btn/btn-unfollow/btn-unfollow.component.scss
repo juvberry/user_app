@@ -15,3 +15,22 @@
     font-size: toRem(12);
     font-weight: lighter;
 }
+
+.btn-unfollow:hover{
+    background-color: $white;
+    border: toRem(2) solid $warning;
+    color: $warning;
+    cursor: pointer;
+}
+
+.btn-unfollow-lg{
+    background-color: $warning;
+    border: toRem(2) solid transparent;
+    border-radius: toRem(4);
+    color: $white;
+
+    height: toRem(38);
+    width: toRem(110);
+    margin: 0;
+    font-size: toRem(14);
+}

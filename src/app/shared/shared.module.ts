@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// CDK
+import { LayoutModule } from '@angular/cdk/layout';
+
+
 // Material
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatSliderModule } from '@angular/material/slider';
 
 
 // Components
@@ -23,7 +28,8 @@ const MaterialModules = [
   MatCardModule,
   MatButtonModule,
   MatExpansionModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSliderModule
 ]
 
 const BtnComponents = [
@@ -47,12 +53,14 @@ const CardComponents = [
   ],
   imports: [
     CommonModule,
-    MaterialModules
+    MaterialModules,
+    LayoutModule,
   ],
   exports: [
     BtnComponents,
     CardComponents,
-    MaterialModules
+    MaterialModules,
+    LayoutModule
   ]
 })
 

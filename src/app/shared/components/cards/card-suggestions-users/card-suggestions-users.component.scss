@@ -43,7 +43,10 @@
 .suggestion-card-container{
     height: toRem(265);
 
-    @media (max-width: 425px) {
+    // ajuda o card a ficar com width inteiro
+    @media (max-width: 575px) {
         max-height: toRem(200);
+        min-width: unset;
+        width: 100%;
     }
 }

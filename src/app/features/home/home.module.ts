@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home.component';
-import { NgxUsefulSwiperModule } from 'ngx-useful-swiper'
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper'
     CommonModule,
     HomeRoutingModule,
     SharedModule,
-    NgxUsefulSwiperModule
+    SwiperModule
   ],
 })
 

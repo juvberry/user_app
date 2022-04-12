@@ -1,39 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout'
-import { SwiperOptions } from 'swiper';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout'
+
+import { state } from '@angular/animations';
 
 // service
 import { UserListService } from 'src/app/services/user-list.service';
-import { state } from '@angular/animations';
+import Swiper from 'swiper';
+import { SwiperComponent } from 'swiper/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
-
-  config: SwiperOptions = {
-    pagination: { el: '.swiper-pagination', clickable: true },
-    spaceBetween: 30
-  }; 
-
-  constructor(private userListService:UserListService, public breakpointObserver:BreakpointObserver) { }
+  @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
+  constructor(private userListService:UserListService, public breakpointObserver:BreakpointObserver) {}
 
   users:Array<any> = [];
   mainUser:any;
   smallScreen:any;
-  smallUsers:any;
-  
 
   ngOnInit(): void {
     this.getSuggestionUsers();
     this.getMainUser();
     this.isSmallScreen();
   }
-  
-  // fazer com que ao passar para o lado, busque um novo usuario nas sugestoes
-
 
   // busca um novo usuario
   newUser(){
@@ -102,6 +95,13 @@ export class HomeComponent implements OnInit {
         console.log('tela maior que 767')
       }
     })
+  }
+
+  getLast(swiperParam: any){
+    const lastSwipe = swiperParam;
+    if(lastSwipe.isEnd){
+      this.newUser()
+    }
   }
 
 }

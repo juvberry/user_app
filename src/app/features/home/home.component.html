@@ -29,13 +29,10 @@
             </div>
         </ng-container>
         <ng-container *ngIf="smallScreen">
-            <swiper [config]="config">
-                <div class="swiper-wrapper">
-                    <div class="col swiper-slide" *ngFor="let user of users">
-                        <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
+            <swiper [slidesPerView]="1" (reachEnd)="getLast($event)">
+                <ng-template swiperSlide class="col-12"  *ngFor="let user of users">
+                    <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
+                </ng-template>
             </swiper>
         </ng-container>
     </div>

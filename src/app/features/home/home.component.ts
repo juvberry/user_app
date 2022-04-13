@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout'
-
-import { state } from '@angular/animations';
 
 // service
 import { UserListService } from 'src/app/services/user-list.service';
-import Swiper from 'swiper';
+
+// swiper
 import { SwiperComponent } from 'swiper/angular';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -15,12 +15,22 @@ import { SwiperComponent } from 'swiper/angular';
 })
 
 export class HomeComponent implements OnInit {
+
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
-  constructor(private userListService:UserListService, public breakpointObserver:BreakpointObserver) {}
+
+  constructor( private userListService:UserListService, 
+               private breakpointObserver:BreakpointObserver,
+               private cdr: ChangeDetectorRef) {
+    this.userListener.subscribe((res)=>{
+      this.users.push(res);
+      this.cdr.detectChanges();
+    })
+  }
 
   users:Array<any> = [];
   mainUser:any;
   smallScreen:any;
+  userListener = new Subject<any>()
 
   ngOnInit(): void {
     this.getSuggestionUsers();
@@ -30,9 +40,14 @@ export class HomeComponent implements OnInit {
 
   // busca um novo usuario
   newUser(){
+    let userResult:any = null
     this.userListService.getUser().subscribe((res: any) => {
       res.results[0].fromApi = true;
-      this.users.push(res.results[0]);
+      userResult = res.results[0]
+    },(error) => {
+      console.log(error)
+    },() => {
+      this.userListener.next(userResult)
     })
   }
 
@@ -97,6 +112,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  // recebe evento depois do ultimo slide e verifica se é o último slide, para adicionar um novo usuário
   getLast(swiperParam: any){
     const lastSwipe = swiperParam;
     if(lastSwipe.isEnd){

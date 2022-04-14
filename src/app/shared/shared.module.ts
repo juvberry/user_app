@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSliderModule } from '@angular/material/slider';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // Components
 import { BtnTryNextOneComponent } from './components/btn/btn-try-next-one/btn-try-next-one.component';
@@ -22,6 +22,7 @@ import { BtnFollowingUsersComponent } from './components/btn/btn-following-users
 import { CardSuggestionsUsersComponent } from './components/cards/card-suggestions-users/card-suggestions-users.component';
 import { CardMainInfoComponent } from './components/cards/card-main-info/card-main-info.component';
 import { CardInfoComponent } from './components/cards/card-info/card-info.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 const MaterialModules = [
@@ -29,7 +30,8 @@ const MaterialModules = [
   MatButtonModule,
   MatExpansionModule,
   MatToolbarModule,
-  MatSliderModule
+  MatSliderModule,
+  MatProgressSpinnerModule
 ]
 
 const BtnComponents = [
@@ -49,7 +51,8 @@ const CardComponents = [
 @NgModule({
   declarations: [
     BtnComponents,
-    CardComponents
+    CardComponents,
+    LoadingComponent
   ],
   imports: [
     CommonModule,

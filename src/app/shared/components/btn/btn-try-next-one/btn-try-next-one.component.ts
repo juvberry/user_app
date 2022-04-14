@@ -11,5 +11,4 @@ export class BtnTryNextOneComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

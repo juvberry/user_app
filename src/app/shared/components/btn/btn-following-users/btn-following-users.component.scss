@@ -9,6 +9,7 @@
 
     & .header-container-following{
         height: toRem(42);
+        padding: 0 toRem(8) 0 0;
     }
 
     & .expansion-title{
@@ -21,6 +22,12 @@
     & span.mat-expansion-indicator{
         color: $white;
         padding-top: toRem(10);
+    }
+}
+
+@media (hover: none){
+    .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover {
+        background-color: unset!important;
     }
 }
 

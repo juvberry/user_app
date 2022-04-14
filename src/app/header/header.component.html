@@ -1,12 +1,12 @@
 <nav class="header-container navbar fixed-top">
     <div class="container-fluid">
         <div class="row header-row">
-            <div class="col-6">
+            <div class="col-4 col-md-6">
                 <mat-toolbar class="header-text">
                     <span>users_like.me</span>
                 </mat-toolbar>
             </div>
-            <div class="col-6">
+            <div class="col-8 col-md-6">
                 <app-btn-following-users [users]="users" (unfollow)="unfollowUser($event)"></app-btn-following-users>
             </div>
         </div>

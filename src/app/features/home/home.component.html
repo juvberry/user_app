@@ -26,10 +26,10 @@
         <ng-container *ngIf="!smallScreen">
             <div class="col" *ngFor="let user of users">
                 <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
-            </div>
+            </div>  
         </ng-container>
         <ng-container *ngIf="smallScreen">
-            <swiper [slidesPerView]="1" (reachEnd)="getLast($event)">
+            <swiper [slidesPerView]="1" (slideNextTransitionEnd)="getLast($event)">
                 <ng-template swiperSlide class="col-12"  *ngFor="let user of users">
                     <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
                 </ng-template>

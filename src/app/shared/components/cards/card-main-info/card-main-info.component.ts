@@ -15,7 +15,7 @@ export class CardMainInfoComponent implements OnInit {
   @Output() follow:any = new Subject();
   @Output() unfollow:any = new Subject();
 
-  following = false
+  following = false;
 
   ngOnInit(): void {
   }
@@ -51,5 +51,4 @@ export class CardMainInfoComponent implements OnInit {
     }
   }
   
-
 }

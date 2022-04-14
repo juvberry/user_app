@@ -38,8 +38,11 @@ export class HomeComponent implements OnInit {
     this.isSmallScreen();
   }
 
+  loading = false
+
   // busca um novo usuario
   newUser(){
+    this.loading = true
     let userResult:any = null
     this.userListService.getUser().subscribe((res: any) => {
       res.results[0].fromApi = true;
@@ -48,6 +51,7 @@ export class HomeComponent implements OnInit {
       console.log(error)
     },() => {
       this.userListener.next(userResult)
+      this.loading = false
     })
   }
 

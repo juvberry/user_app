@@ -9,19 +9,21 @@
               following
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <ul id="following-list" *ngFor="let user of users">
-              <li class="list-item">
-                  <div class="user-container">
-                    <div>
-                        <img class="user-img-list" [src]="user?.picture?.large" alt="user picture">
-                    </div>
-                    <p class="user-name-list">
+          <cdk-virtual-scroll-viewport itemSize="6" style="height: 60rem">
+              <ul id="following-list" *cdkVirtualFor="let user of users">
+                <li class="list-item">
+                    <div class="user-container">
+                      <div>
+                          <img class="user-img-list" [src]="user?.picture?.large" alt="user picture">
+                      </div>
+                      <p class="user-name-list">
                         {{user?.name?.first}} {{user?.name?.last}}
-                    </p>
-                  </div>
-                  <app-btn-unfollow (click)="btnUnfollow(user)"></app-btn-unfollow>
-              </li>
-          </ul>
+                      </p>
+                    </div>
+                    <app-btn-unfollow (click)="btnUnfollow(user)"></app-btn-unfollow>
+                </li>
+              </ul>
+          </cdk-virtual-scroll-viewport>
         </mat-expansion-panel>
       </mat-accordion>
 </div>

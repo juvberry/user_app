@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 // CDK
 import { LayoutModule } from '@angular/cdk/layout';
-
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 // Material
 import { MatCardModule } from '@angular/material/card';
@@ -11,7 +11,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSliderModule } from '@angular/material/slider';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // Components
 import { BtnTryNextOneComponent } from './components/btn/btn-try-next-one/btn-try-next-one.component';
@@ -23,6 +22,7 @@ import { CardSuggestionsUsersComponent } from './components/cards/card-suggestio
 import { CardMainInfoComponent } from './components/cards/card-main-info/card-main-info.component';
 import { CardInfoComponent } from './components/cards/card-info/card-info.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { LoadingModule } from './components/loading/loading.module';
 
 
 const MaterialModules = [
@@ -31,7 +31,6 @@ const MaterialModules = [
   MatExpansionModule,
   MatToolbarModule,
   MatSliderModule,
-  MatProgressSpinnerModule
 ]
 
 const BtnComponents = [
@@ -52,18 +51,21 @@ const CardComponents = [
   declarations: [
     BtnComponents,
     CardComponents,
-    LoadingComponent
   ],
   imports: [
     CommonModule,
     MaterialModules,
     LayoutModule,
+    LoadingModule,
+    ScrollingModule
   ],
   exports: [
     BtnComponents,
     CardComponents,
     MaterialModules,
-    LayoutModule
+    LayoutModule,
+    LoadingModule,
+    ScrollingModule
   ]
 })
 

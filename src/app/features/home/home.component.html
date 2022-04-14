@@ -23,17 +23,20 @@
                 Suggestions 4 you
             </h2>
         </div>
-        <ng-container *ngIf="!smallScreen">
-            <div class="col" *ngFor="let user of users">
-                <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
-            </div>  
-        </ng-container>
-        <ng-container *ngIf="smallScreen">
-            <swiper [slidesPerView]="1" (slideNextTransitionEnd)="getLast($event)">
-                <ng-template swiperSlide class="col-12"  *ngFor="let user of users">
+        <ng-container *ngIf="!loading">
+            <ng-container *ngIf="!smallScreen">
+                <div class="col" *ngFor="let user of users">
                     <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
-                </ng-template>
-            </swiper>
+                </div>  
+            </ng-container>
+            <ng-container *ngIf="smallScreen">
+                <swiper [slidesPerView]="1" (slideNextTransitionEnd)="getLast($event)">
+                    <ng-template swiperSlide class="col-12"  *ngFor="let user of users">
+                        <app-card-suggestions-users [user]="user" (follow)="addNewSuggestionUser($event)"></app-card-suggestions-users>
+                    </ng-template>
+                </swiper>
+            </ng-container>
         </ng-container>
+        <app-loading *ngIf="loading"></app-loading>
     </div>
 </div>

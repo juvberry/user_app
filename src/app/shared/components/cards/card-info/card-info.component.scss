@@ -1,13 +1,12 @@
 @import '../../../../../styles/variables.scss';
 @import '../../../../../styles/to-rem.scss';
 
-
 .info-container{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
 
-    border: 1px solid #ECECEC;
+    border: toRem(1) solid #ECECEC;
 
     .card-title{
         font-size: toRem(16);
@@ -21,11 +20,7 @@
     .expansion-panel{
         box-shadow: none;
         padding: 0 toRem(2);
-        border-top: 1px solid #ECECEC;
-    }
-
-    .list-container{
-        padding: 0;
+        border-top: toRem(1) solid #ECECEC;
     }
 
     .see-more{
@@ -37,5 +32,9 @@
         font-size: toRem(14);
         color: $primary-color;
         opacity: 2;
+    }
+
+    .list-container{
+        padding: 0;
     }
 }

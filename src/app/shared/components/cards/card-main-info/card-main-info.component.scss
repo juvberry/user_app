@@ -8,7 +8,7 @@
 
 .card-main-info-container{
     & mat-card{
-        border: 1px solid #ececec;
+        border: toRem(1) solid #ececec;
     }
    
     .card-bckground-img{
@@ -86,30 +86,30 @@
                         }
                     }
                 }
+
+                .btn-follow{
+                    width: 44vw;
+                    align-items: flex-end;
+                    display: flex;
+                    justify-content: flex-end;
+    
+                    @media (max-width:425px) {
+                        justify-content: center;
+                        padding: toRem(2) 0 toRem(12) 0;
+                    }
+                }
+
+                .btn-next{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+    
+                    @media (max-width:425px) {
+                        padding-bottom: toRem(8);
+                    }
+                }
             }
             
-            .btn-next{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-
-                @media (max-width:425px) {
-                    padding-bottom: toRem(8);
-                }
-            }
-
-            .btn-follow{
-                width: 44vw;
-                align-items: flex-end;
-                display: flex;
-                justify-content: flex-end;
-
-                @media (max-width:425px) {
-                    justify-content: center;
-                    padding: toRem(2) 0 toRem(12) 0;
-                }
-            }
-
             .name-container{
                 padding-top: toRem(16);
 
@@ -141,8 +141,6 @@
                     }
                 }
             }
-    
-
         }
     }
 }

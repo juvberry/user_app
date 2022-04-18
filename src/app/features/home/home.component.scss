@@ -2,7 +2,7 @@
 @import '../../../styles/to-rem.scss';
 
 .home-container{
-    margin-top: 50px;
+    margin-top: toRem(50);
     width: 84%;
 }
 

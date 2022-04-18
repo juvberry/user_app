@@ -53,6 +53,7 @@
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: toRem(16);
     
     & .user-container{
         display: flex;
